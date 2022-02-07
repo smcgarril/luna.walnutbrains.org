@@ -1,0 +1,20 @@
+version: '3'
+services:
+  web:
+    image: apache1
+    build: .
+    container_name: luna_walnutbrains_org
+    environment:
+      VIRTUAL_HOST: luna.walnutbrains.org 
+      VIRTUAL_PORT: 80
+      LETSENCRYPT_HOST: luna.walnutbrains.org 
+      LETSENCRYPT_EMAIL: smcgarril@gmail.com
+    restart: always
+    ports:
+      - "8081:80"
+    expose:
+      - 80
+networks:
+  default:
+    external:
+      name: nginx-proxy
