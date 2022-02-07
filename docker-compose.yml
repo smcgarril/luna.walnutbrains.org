@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: apache1
+    image: luna_walnutbrains_org:1.0.0
     build: .
     container_name: luna_walnutbrains_org
     environment:
